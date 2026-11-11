@@ -1,0 +1,52 @@
+Timing chart
+
+H : 3.3V, L : GND
+3 - middle : 3 state, floating
+4 - fix value - 로직 값과 관계 없이 값이 고정되어야 함
+5 - change value - 값이 마구 변함
+6 - rising range - rising 가능 범위 표시
+7 - falling 
+
+
+bus : valid state : 2개의 평행선의 X자 모양 교차선으로 표시, 버스 값의 변화에 의한 과도기를 나타냄
+                  : 데이터를 정확하게 읽어들일 수 있는 안정된 상태를 의미
+      valid value : 
+pulse width : 값이 변화한 후 유지된 시간 [low - high - low / high - low - high]
+Rising - [L -> H] / falling - [H -> L] Edge : 변화된 순간을 감지
+원인과 결과 : pulse의 변화가 원인이 되어 다른 pulse가 변화함
+
+Memory IF BUS : ADDRESS BUS, DATA BUS, Read, Write, CS(chip select : 읽어올 메모리를 cpu가 선택)
+
+
+
+Memory Analysis
+메모리 address bus표시 - A[n:0] / data bus표시 - D[n:8]
+A[n:0]의 의미 : Address주소가 2^n개까지 만들어질 수 있다.
+D[n:0]의 의미 : 하나의 Address에 n개의 bit 값이 저장될 수 있다. 
+칩셋 용량 : (Address n개가 표현할 수 있는 주소의 갯수 2^n) * (Data를 표현할 때 사용할 수 있는 bit수 n개 : (n/8)byte)
+
+KBi : 2^10개의 상태를 표현할 수 있다.
+KB : 2^10, MB : 2^20, GB : 2^30
+
+Align
+
+짝수(2) align의 특징 
+2^n align : n번 째까지 bit값이 항상 0
+
+
+RISC(Reduced Instruction Set Computer) : 하드웨어에 구현하는 CPU명령어를 최소한으로 제작하고 이를 SOFTWARE로 조합하여 사용하기 위한 방법.
+CISC(Complex Instruction Set Computer) : 하드웨어에 CPU명령어를 구현하여 성능을 올리는 방법.
+
+ARM(Advanced RISC Machine)
+Cortex A core : Application Processor - Multi processing을 염두에 두고 만들어진 코어
+       R core : Real Time Target - 실제 시간 규약에 맞춘 코어 (정해진 시간에 맞춰 동작해야 함) - (RTOS 사용)
+       M core : Micro Controller용 core - 
+       X core : Smartphone등에 사용되는 고성능 칩셋을 위한 코어
+
+Bus address decoder
+CPU의 CS핀의 신호를 Address에 맞는 주변 장치가 활성화될 수 있도록 전달하는 장치.
+
+
+NAND Flash : 대용량 저가 생산 가능 / bed 섹터 발생 - 보조메모리로 사용
+NOR Flash : 고가 / bed 섹터 X, 동작 중 불량확률 낮음 - ROM
+
