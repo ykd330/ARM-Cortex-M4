@@ -1,4 +1,2 @@
-# C
+# Embedded basic with STM32F411xE (ARM Cortex-M4 core) 
 
-
-- [온디바이스 Ai 2기] C언어
