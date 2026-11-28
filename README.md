@@ -1,72 +1,12 @@
 # ARM Cortex-M4 core with STM32F411xE
 
-## 05 Register에 접근해 STM32F411xE 제어하기
-*  ### 01 LED_ON_LAB
+온디바이스AI SW개발 과정의 Cortex-M 펌웨어 실습 코드입니다.
 
----
+| 폴더 | 내용 | 핵심 개념 |
+|---|---|---|
+| 01_gpio_led | LED 점멸 | GPIO 출력 |
+| 02_button_irq | 버튼으로 LED 토글 | 외부 인터럽트, 디바운싱 |
+| 03_uart_echo | PC와 문자 주고받기 | UART, 링 버퍼 |
+| 04_pwm_fan | 모터 속도 제어 | 타이머 PWM, 듀티비 |
 
-## 06 정의된 CMSIS를 이용한 STM32F411xE 제어
-*  ### 01 TYPE_ QUALIFIER_EX
-*  ### 02 CMSIS_LAB
-
----
-
-## 07 비트 연산자
-*  ### 01 BIT_OP_LAB
-
----
-
-## 08 주변 장치 클록 활성화
-*  ### 01 CLOCK_CONFIG_EX
-
----
-
-## 09 ***외부 주변 장치 : 스위치***를 이용한 제어
-*  ### 01 KEY_IN_LAB
-*  ### 02 KEY_DRIVER_LAB
-*  ### 03 KEY_CHATTERING_LAB
-
----
-
-## 10 ***주변장치 : USART*** 통신
-*  ### 01 UART_ECHOBACK_LAB
-*  ### 02 UART_DRIVER_LAB
-
----
-
-## 11 ***주변장치 : TIMER*** 제어
-*  ### 01 SYSTIC_TIMER_LAB
-*  ### 02 TIMER_DRIVER_LAB
-*  ### 03 TIMER_OUTPUT_LAB
-
----
-
-## 12 ***주변장치 : Interrupt*** 사용하기
-*  ### 01 EXTI_IRQ_EX
-*  ### 02 EXTI_EVENT_EX
-*  ### 03 UART_EVENT_EX
-*  ### 04 TIMER_EVENT_EX
-*  ### 05 IRQ_NESTING_EX
-
----
-
-## 13 ***통신 protocol : I2C*** 사용하기
-*  ### 01 I2C_IF_EX
-
----
-
-## 14 ***통신 protocol : SPI*** 사용하기
-*  ### 01 SPI_IF_EX
-
----
-
-## 15 ***ADC*** 사용하기
-*  ### 01 ADC_EX
-
----
-
-## 16 ***DMA*** 사용하기
-*  ### 01 DMA_EX
-
----
-
+- 보드: STM32F411RE / 개발 환경: VSCode
